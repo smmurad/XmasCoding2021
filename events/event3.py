@@ -29,8 +29,7 @@ def get_element_with_most_common(signal, pos, least_common=False):
 
 def solve1():
     with open("input/input3.txt", "r") as fh:
-        txt = fh.read()
-        signal = txt.splitlines()
+        signal = fh.read().splitlines()
     gamma = "0b"
     epsilon = "0b"
     for i in range(len(signal[0])):
@@ -45,8 +44,7 @@ def solve1():
 
 def solve2():
     with open("input/input3.txt", "r") as fh:
-        txt = fh.read()
-        signal = txt.splitlines()
+        signal = fh.read().splitlines()
 
     # finding oxygen
     elements = signal
