@@ -1,28 +1,24 @@
 def solve1():
     with open("input/input2.txt", "r") as fh:
-        txt = fh.read()
-        cmds = txt.splitlines()
+        cmds = fh.read().splitlines()
 
-    ans = 0
     d_x = 0
     d_y = 0
-
     for cmd in cmds:
-        dir, val = cmd.split()
+        direction, val = cmd.split()
         val = int(val)
-        if dir == "forward":
+        if direction == "forward":
             d_x += val
-        if dir == "down":
+        if direction == "down":
             d_y += val
-        if dir == "up":
+        if direction == "up":
             d_y -= val
 
     return d_x * d_y
 
 def solve2():
     with open("input/input2.txt", "r") as fh:
-        txt = fh.read()
-        cmds = txt.splitlines()
+        cmds = fh.read().splitlines()
 
     d_x = 0
     d_y = 0
