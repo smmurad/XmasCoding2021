@@ -49,7 +49,6 @@ def solve1():
         # Check if any board has a full line
         for board_ix in range(numBoards):
             if boardHasWon(boards, board_ix):
-                print("Board", board_ix, "won! with num", num)
                 sum = 0
                 for i in boards[board_ix * 25:board_ix * 25 + 25]:
                     sum += int(i)
