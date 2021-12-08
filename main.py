@@ -1,8 +1,8 @@
-from events import event1, event2, event3,event4, event6
+from events import event1, event2, event3, event4, event5, event6
 
 def main():
-    print(event6.solve1())
-    print(event6.solve2())
+    print(event5.solve1())
+    print(event5.solve2())
     # print(event1.solve1())
     # print(event1.solve2())
     # print(event2.solve1())
