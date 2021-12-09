@@ -17,7 +17,6 @@ def get_min_cost(txt, advanced_cost=False, binary=False):
     furthest_crab = max(txt)
     cost_table = []
     cost_table.append(0)
-    print(furthest_crab)
     for i in range(1, furthest_crab+1):
         cost_table.append(i + cost_table[i-1])
 
@@ -28,7 +27,7 @@ def get_min_cost(txt, advanced_cost=False, binary=False):
     crab_cost = []
     if not binary:
         for i in range(right_crab):
-            crab_cost.append(getCost(txt, i, cost_table, advanced_cost=True))
+            crab_cost.append(getCost(txt, i, cost_table, advanced_cost=advanced_cost))
         return min(crab_cost)
 
     if cost > cost1:
@@ -44,9 +43,9 @@ def get_min_cost(txt, advanced_cost=False, binary=False):
         if goDown:
             pos = math.floor((right_crab + left_crab) / 2)
 
-        cost = getCost(txt, pos, cost_table)
-        costR = getCost(txt, pos + 1, cost_table)
-        costL = getCost(txt, pos - 1, cost_table)
+        cost = getCost(txt, pos, cost_table, advanced_cost=advanced_cost)
+        costR = getCost(txt, pos + 1, cost_table, advanced_cost=advanced_cost)
+        costL = getCost(txt, pos - 1, cost_table, advanced_cost=advanced_cost)
         if cost < costR and cost < costL:
             return cost
         elif cost > costL:
@@ -67,10 +66,9 @@ def solve1():
     return get_min_cost(txt, binary=True)
 
 
-
 def solve2():
     with open("input/input7.txt", "r") as fh:
         txt = fh.read().split(",")
     txt = list(map(int, txt))
     txt.sort()
-    return get_min_cost(txt, advanced_cost=True)
+    return get_min_cost(txt, binary=False, advanced_cost=True)

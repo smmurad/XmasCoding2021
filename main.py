@@ -1,6 +1,7 @@
 from events import event1, event2, event3, event4, event5, event6, event7
 
 def main():
+    print(event7.solve1())
     print(event7.solve2())
     # print(event5.solve2())
     # print(event1.solve1())
