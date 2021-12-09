@@ -20,15 +20,15 @@ def get_min_cost(txt, advanced_cost=False, binary=False):
     for i in range(1, furthest_crab+1):
         cost_table.append(i + cost_table[i-1])
 
-    pos = int((right_crab + left_crab) / 2)
-    cost = getCost(txt, pos, cost_table)
-    cost1 = getCost(txt, pos + 1, cost_table)
-
     crab_cost = []
     if not binary:
         for i in range(right_crab):
             crab_cost.append(getCost(txt, i, cost_table, advanced_cost=advanced_cost))
         return min(crab_cost)
+
+    pos = int((right_crab + left_crab) / 2)
+    cost = getCost(txt, pos, cost_table)
+    cost1 = getCost(txt, pos + 1, cost_table)
 
     if cost > cost1:
         goUp = True
