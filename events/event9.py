@@ -50,11 +50,8 @@ def solve2():
     noChange = False
     while not noChange:
         noChange = True
-        # for line in danger_grid:
-        #     print(line)
         for y in range(size_y):
             for x in range(size_x):
-                print((y, x))
                 if danger_grid[y][x] != 0:
                     continue
                 if x > 0:
@@ -75,15 +72,12 @@ def solve2():
                         danger_grid[y][x] = danger_grid[y + 1][x]
 
     max_val = max(list(map(max, danger_grid)))
-    nums = {}
-    for i in range(1, max_val+1):
-        nums[i] = 0
+    nums = [0 for i in range(max_val+1)]
 
     for y in range(size_y):
         for x in range(size_x):
             val = danger_grid[y][x]
             if val > 0:
                 nums[val] += 1
-    # print(nums)
-    for line in danger_grid:
-        print(line)
+    nums.sort()
+    return nums[-1]*nums[-2]*nums[-3]
