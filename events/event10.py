@@ -99,7 +99,6 @@ def get_full_cost(strs):
     return tot_score
 
 
-
 to_add = []
 
 
