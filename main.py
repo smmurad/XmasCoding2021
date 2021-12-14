@@ -1,9 +1,9 @@
-from events import event12
+from events import event11
 
 
 def main():
-    print(event12.solve1())
-    print(event12.solve2())
+    print(event11.solve1())
+    print(event11.solve2())
 
 
 if __name__ == "__main__":
